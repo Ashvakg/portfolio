@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon"> <!-- Add your favicon -->
     <style>
         /* General Styles */
         body {
@@ -62,12 +63,14 @@
         #hero h1 {
             font-size: 3.5rem;
             animation: fadeIn 2s ease-in;
+            margin-bottom: 20px;
         }
 
         #hero .typed-subtitle {
             font-size: 2rem;
             color: #e4e4e4;
             margin-top: 0.5rem;
+            margin-bottom: 30px;
         }
 
         .actions {
@@ -102,64 +105,66 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-/* Certifications Section */
-#certifications {
-    padding: 4rem 2rem;
-    background: #121212; /* Matches overall theme */
-    text-align: center;
-}
 
-.section-title {
-    font-size: 2.4rem;
-    color: #00c7ff;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    font-weight: 700;
-}
+        /* Certifications Section */
+        #certifications {
+            padding: 4rem 2rem;
+            background: #121212;
+            text-align: center;
+        }
 
-/* Grid Layout for Certifications */
-.certification-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-}
+        .certification-title {
+            font-size: 2.4rem;
+            color: #00c7ff;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
 
-/* Certification Card */
-.certification-card {
-    background: #2a2a2a;
-    border-radius: 12px;
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        /* Grid Layout for Certifications */
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
 
-.certification-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
+        /* Certification Card */
+        .certification-card {
+            background: #2a2a2a;
+            border-radius: 12px;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-/* Certification Logos */
-.certification-card img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 1rem;
-}
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
 
-/* Certification Title */
-.certification-card h3 {
-    font-size: 1.4rem;
-    color: #00e0a1;
-    margin-bottom: 0.5rem;
-}
+        /* Certification Logos */
+        .certification-card img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
 
-/* Certification Description */
-.certification-card p {
-    font-size: 1rem;
-    color: #b3b3b3;
-    line-height: 1.6;
-}
+        /* Certification Title */
+        .certification-card h3 {
+            font-size: 1.4rem;
+            color: #00e0a1;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Certification Description */
+        .certification-card p {
+            font-size: 1rem;
+            color: #b3b3b3;
+            line-height: 1.6;
+        }
+
         /* Skills Section */
         #skills {
             padding: 4rem 2rem;
@@ -198,97 +203,111 @@
             border-radius: 10px;
         }
 
-/* General Section Styling */
-#projects {
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #161a1d, #22262a);
-    text-align: center;
-}
+        /* Projects Section */
+        #projects {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #161a1d, #22262a);
+            text-align: center;
+        }
 
-.section-title {
-    font-size: 2.4rem;
-    color: #00c7ff;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    font-weight: 700;
-}
+        .project-title {
+            font-size: 2.4rem;
+            color: #00c7ff;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
 
-/* Grid Layout */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjust for larger images */
-    gap: 2rem; /* Consistent spacing between cards */
-    justify-items: center;
-}
+        /* Grid Layout */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
 
-/* Project Card */
-.project-card {
-    background: #2a2a2a;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle card shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    max-width: 350px; /* Larger card width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        /* Project Card */
+        .project-card {
+            background: #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
 
-/* Image Styling */
-.project-card img {
-    width: 100%;
-    height: 250px; /* Larger image height */
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    transition: transform 0.3s ease;
-}
+        /* Image Styling */
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            transition: transform 0.3s ease;
+        }
 
-.project-card:hover img {
-    transform: scale(1.05); /* Subtle zoom effect */
-}
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
 
-/* Card Content */
-.card-content {
-    padding: 1rem;
-    text-align: center;
-}
+        /* Card Content */
+        .card-content {
+            padding: 1rem;
+            text-align: center;
+        }
 
-.card-content h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: #00e0a1; /* Bright teal for titles */
-}
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #00e0a1;
+        }
 
-.card-content p {
-    font-size: 1rem;
-    color: #b3b3b3;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
+        .card-content p {
+            font-size: 1rem;
+            color: #b3b3b3;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
 
-/* Button Styling */
-.card-content .button {
-    background-color: #00c7ff;
-    color: #fff;
-    font-size: 1rem;
-    padding: 0.6rem 1.8rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+        /* Button Styling */
+        .card-content .button {
+            background-color: #00c7ff;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.6rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-.card-content .button:hover {
-    background-color: #2ab7ca;
-    transform: scale(1.1);
-}
+        .card-content .button:hover {
+            background-color: #2ab7ca;
+            transform: scale(1.1);
+        }
 
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certification-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
@@ -298,30 +317,30 @@
             <h1>Welcome to Ashvak's Portfolio</h1>
             <h2 class="typed-subtitle"></h2>
             <div class="actions">
-                <a href="#projects" class="button explore-button">Explore My Work</a>
-                <a href="files/Ashvak_CV.pdf" download="Ashvak_G_CV" class="button download-button">Download My CV</a>
+                <a href="#projects" class="button explore-button" aria-label="Explore my work">Explore My Work</a>
+                <a href="files/Ashvak_CV.pdf" download="Ashvak_G_CV" class="button download-button" aria-label="Download my CV">Download My CV</a>
             </div>
         </div>
     </section>
-	<section id="certifications">
-		<h2 class="section-title">Certifications</h2>
-		<div class="certification-grid">
-			<!-- Certification 1 -->
-			<div class="certification-card">
-				<img src="images/aws-certified-data-engineer-associate.png" alt="AWS Certified Data Engineer">
-				<h3>AWS Certified Data Engineer</h3>
-				<p>Validates expertise in building and maintaining data solutions on AWS.</p>
-			</div>
-	
-			<!-- Certification 2 -->
-			<div class="certification-card">
-				<img src="images/google-data-analytics-professional-certificate.2.png" alt="Google Data Analytics">
-				<h3>Google Data Analytics</h3>
-				<p>Proficiency in data analysis, visualization, and decision-making techniques.</p>
-			</div>
-		</div>
-	</section>
-	
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2 class="certification-title">Certifications</h2>
+        <div class="certification-grid">
+            <!-- Certification 1 -->
+            <div class="certification-card">
+                <img src="images/aws-certified-data-engineer-associate.png" alt="AWS Certified Data Engineer certification badge">
+                <h3>AWS Certified Data Engineer</h3>
+                <p>Validates expertise in building and maintaining data solutions on AWS.</p>
+            </div>
+            <!-- Certification 2 -->
+            <div class="certification-card">
+                <img src="images/google-data-analytics-professional-certificate.2.png" alt="Google Data Analytics certification badge">
+                <h3>Google Data Analytics</h3>
+                <p>Proficiency in data analysis, visualization, and decision-making techniques.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills">
         <h2>Key Skills</h2>
@@ -342,84 +361,86 @@
             <div class="progress"><div style="width: 90%;"></div></div>
         </div>
     </section>
-<!-- Projects Section -->
-<section id="projects">
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="project-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-            <img src="images/claims_performance_dashboard.png" alt="Claims Performance Dashboard">
-            <div class="card-content">
-                <h3>Claims Performance Dashboard</h3>
-                <p>Analyzed claims data with Power BI to identify cost patterns and improve provider performance.</p>
-                <a href="https://github.com/Ashvakg/Zomato-Delivery-Efficiency_Analyzing-and-Predicting-Factors?tab=readme-ov-file" target="_blank" class="button">View Details</a>
-            </div>
-        </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-            <img src="images/helpline_dashboard.png" alt="Helpline Dashboard">
-            <div class="card-content">
-                <h3>Helpline Dashboard</h3>
-                <p>Interactive dashboard tracking helpline KPIs, enabling better traffic management decisions.</p>
-                <a href="https://github.com/Ashvakg/Helpline-Dashboard" target="_blank" class="button">View Details</a>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="project-title">Featured Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="images/claims_performance_dashboard.png" alt="Claims Performance Dashboard">
+                <div class="card-content">
+                    <h3>Claims Performance Dashboard</h3>
+                    <p>Analyzed claims data with Power BI to identify cost patterns and improve provider performance.</p>
+                    <a href="https://github.com/Ashvakg/Zomato-Delivery-Efficiency_Analyzing-and-Predicting-Factors?tab=readme-ov-file" target="_blank" class="button">View Details</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-            <img src="images/zomato_Insights_page-0001.jpg" alt="Logistics Efficiency Insights">
-            <div class="card-content">
-                <h3>Logistics Efficiency Insights</h3>
-                <p>Optimized delivery performance with predictive analytics and Power BI dashboards.</p>
-                <a href="https://github.com/Ashvakg/Zomato-Delivery-Efficiency_Analyzing-and-Predicting-Factors?tab=readme-ov-file" target="_blank" class="button">View Details</a>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="images/helpline_dashboard.png" alt="Helpline Dashboard">
+                <div class="card-content">
+                    <h3>Helpline Dashboard</h3>
+                    <p>Interactive dashboard tracking helpline KPIs, enabling better traffic management decisions.</p>
+                    <a href="https://github.com/Ashvakg/Helpline-Dashboard" target="_blank" class="button">View Details</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Project 4 -->
-        <div class="project-card">
-            <img src="images/ETL Pipeline.png" alt="Building Scalable End-to-End Pipeline">
-            <div class="card-content">
-                <h3>Building Scalable End-to-End Pipeline</h3>
-                <p>Designed ETL pipelines on AWS EC2 and S3, automating data workflows and enabling insightful analysis.</p>
-                <a href="https://github.com/Ashvakg/Just_Eat_Takeaway_Data-Engineering" target="_blank" class="button">View Details</a>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="images/zomato_Insights_page-0001.jpg" alt="Logistics Efficiency Insights">
+                <div class="card-content">
+                    <h3>Logistics Efficiency Insights</h3>
+                    <p>Optimized delivery performance with predictive analytics and Power BI dashboards.</p>
+                    <a href="https://github.com/Ashvakg/Zomato-Delivery-Efficiency_Analyzing-and-Predicting-Factors?tab=readme-ov-file" target="_blank" class="button">View Details</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Project 5 -->
-        <div class="project-card">
-            <img src="images/Queried the data using AWS Athena.png" alt="Optimized Clickstream Analytics">
-            <div class="card-content">
-                <h3>Optimized Clickstream Analytics</h3>
-                <p>Built real-time data pipelines leveraging AWS Kinesis, Glue, Athena, and Redshift for advanced analytics.</p>
-                <a href="https://github.com/Ashvakg/Clickstream_Data-Pipeline" target="_blank" class="button">View Details</a>
+            <!-- Project 4 -->
+            <div class="project-card">
+                <img src="images/ETL Pipeline.png" alt="Building Scalable End-to-End Pipeline">
+                <div class="card-content">
+                    <h3>Building Scalable End-to-End Pipeline</h3>
+                    <p>Designed ETL pipelines on AWS EC2 and S3, automating data workflows and enabling insightful analysis.</p>
+                    <a href="https://github.com/Ashvakg/Just_Eat_Takeaway_Data-Engineering" target="_blank" class="button">View Details</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Project 6 -->
-        <div class="project-card">
-            <img src="images/Ashvak_HR_Analytics_Project_Snapshot_page-0001.jpg" alt="Mapping Work Location Trends">
-            <div class="card-content">
-                <h3>Mapping Work Location Trends</h3>
-                <p>Power BI and DAX for analyzing employee work location trends and creating interactive dashboards.</p>
-                <a href="https://github.com/Ashvakg/Work-Location-Trends_Power-BI" target="_blank" class="button">View Details</a>
+            <!-- Project 5 -->
+            <div class="project-card">
+                <img src="images/Queried the data using AWS Athena.png" alt="Optimized Clickstream Analytics">
+                <div class="card-content">
+                    <h3>Optimized Clickstream Analytics</h3>
+                    <p>Built real-time data pipelines leveraging AWS Kinesis, Glue, Athena, and Redshift for advanced analytics.</p>
+                    <a href="https://github.com/Ashvakg/Clickstream_Data-Pipeline" target="_blank" class="button">View Details</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Project 7 -->
-        <div class="project-card">
-            <img src="images/ETL_Pipeline_2.png" alt="Data Pipeline for Clickstream Data">
-            <div class="card-content">
-                <h3>Data Pipeline for Clickstream Data</h3>
-                <p>Developed automated pipelines with Lambda, DynamoDB, S3, and Redshift for real-time clickstream data.</p>
-                <a href="https://github.com/Ashvakg/Data-pipeline-for-clickstream-data-utilizing-AWS" target="_blank" class="button">View Details</a>
+            <!-- Project 6 -->
+            <div class="project-card">
+                <img src="images/Ashvak_HR_Analytics_Project_Snapshot_page-0001.jpg" alt="Mapping Work Location Trends">
+                <div class="card-content">
+                    <h3>Mapping Work Location Trends</h3>
+                    <p>Power BI and DAX for analyzing employee work location trends and creating interactive dashboards.</p>
+                    <a href="https://github.com/Ashvakg/Work-Location-Trends_Power-BI" target="_blank" class="button">View Details</a>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card">
+                <img src="images/ETL_Pipeline_2.png" alt="Data Pipeline for Clickstream Data">
+                <div class="card-content">
+                    <h3>Data Pipeline for Clickstream Data</h3>
+                    <p>Developed automated pipelines with Lambda, DynamoDB, S3, and Redshift for real-time clickstream data.</p>
+                    <a href="https://github.com/Ashvakg/Data-pipeline-for-clickstream-data-utilizing-AWS" target="_blank" class="button">View Details</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Ashvak G | <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
+        <p>&copy; 2024 Ashvak G | <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a> | <a href="https://github.com/your-github" target="_blank">GitHub</a></p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
