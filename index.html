@@ -1,278 +1,439 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<!-- Other meta tags and stylesheets -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-lq0dB0W5gyRb8MDbO5P0zVbXyjQsO7DlSx1uVSJ61L+4vPllk/Zjcq5FLJGuHCB/" crossorigin="anonymous">
-	</head>
-	
-	<head>
-		<title>Ashvak, The Data Analyst Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-
-				<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashvak G - Data Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
-        #intro {
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #00c7ff;
+        }
+
+        a:hover {
+            color: #00e0a1;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/1920x1080/?data,technology') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        #hero div {
+            z-index: 2;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            animation: fadeIn 2s ease-in;
+        }
+
+        #hero .typed-subtitle {
+            font-size: 2rem;
+            color: #e4e4e4;
+            margin-top: 0.5rem;
+        }
+
+        .actions {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .explore-button {
+            background-color: #00c7ff;
+        }
+
+        .download-button {
+            background-color: #00e0a1;
+        }
+
+        .button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #006fa8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+/* Certifications Section */
+#certifications {
+    padding: 4rem 2rem;
+    background: #121212; /* Matches overall theme */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.4rem;
+    color: #00c7ff;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+/* Grid Layout for Certifications */
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* Certification Card */
+.certification-card {
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Certification Logos */
+.certification-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Certification Title */
+.certification-card h3 {
+    font-size: 1.4rem;
+    color: #00e0a1;
+    margin-bottom: 0.5rem;
+}
+
+/* Certification Description */
+.certification-card p {
+    font-size: 1rem;
+    color: #b3b3b3;
+    line-height: 1.6;
+}
+<section id="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certification-grid">
+        <!-- Certification 1 -->
+        <div class="certification-card">
+            <img src="images/aws-certified-data-engineer-associate.png" alt="AWS Certified Data Engineer">
+            <h3>AWS Certified Data Engineer</h3>
+            <p>Validates expertise in building and maintaining data solutions on AWS.</p>
+        </div>
+
+        <!-- Certification 2 -->
+        <div class="certification-card">
+            <img src="images/google-data-analytics-professional-certificate.2.png" alt="Google Data Analytics">
+            <h3>Google Data Analytics</h3>
+            <p>Proficiency in data analysis, visualization, and decision-making techniques.</p>
+        </div>
+
+        <!-- Add more certifications here -->
+    </div>
+</section>
+
+        /* Skills Section */
+        #skills {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: white;
             text-align: center;
         }
-        .image-container {
+
+        #skills h2 {
+            margin-bottom: 2rem;
+        }
+
+        .skill-bar {
             display: flex;
-            justify-content: center; /* Center images horizontally */
-            align-items: center;    /* Center images vertically */
-            margin-top: 10px;       /* Add some margin to the top if needed */
+            align-items: center;
+            margin-bottom: 1rem;
         }
-        .image-container img {
-            margin-right: 10px;
+
+        .skill-bar span {
+            width: 150px;
+            text-align: left;
+            font-size: 1.2rem;
         }
-        .image-container img:last-child {
-            margin-right: 0;
+
+        .skill-bar .progress {
+            flex: 1;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
         }
+
+        .skill-bar .progress div {
+            height: 100%;
+            background: #00c7ff;
+            border-radius: 10px;
+        }
+
+/* General Section Styling */
+#projects {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #161a1d, #22262a);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.4rem;
+    color: #00c7ff;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+/* Grid Layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjust for larger images */
+    gap: 2rem; /* Consistent spacing between cards */
+    justify-items: center;
+}
+
+/* Project Card */
+.project-card {
+    background: #2a2a2a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle card shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 350px; /* Larger card width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Image Styling */
+.project-card img {
+    width: 100%;
+    height: 250px; /* Larger image height */
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* Card Content */
+.card-content {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #00e0a1; /* Bright teal for titles */
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #b3b3b3;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Button Styling */
+.card-content .button {
+    background-color: #00c7ff;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.6rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-content .button:hover {
+    background-color: #2ab7ca;
+    transform: scale(1.1);
+}
+
     </style>
 </head>
 <body>
-    <!-- Intro -->
-    <div id="intro">
-        <h1>Ashvak G</h1>
-        <h2>Bridging Analytics & Engineering</h2>
-        <div class="image-container">
-            <img src="images/aws-certified-data-engineer-associate.png" alt="">
-            <img src="images/google-data-analytics-professional-certificate.2.png" alt="">
+    <!-- Hero Section -->
+    <section id="hero">
+        <div>
+            <h1>Welcome to Ashvak's Portfolio</h1>
+            <h2 class="typed-subtitle"></h2>
+            <div class="actions">
+                <a href="#projects" class="button explore-button">Explore My Work</a>
+                <a href="files/Ashvak_CV.pdf" download="Ashvak_G_CV" class="button download-button">Download My CV</a>
+            </div>
         </div>
-        <p>Specialize in translating data into actionable insights with strong proficiency in Python, SQL, ETL and <br>
-            designing & implementing robust data pipelines on AWS.<br>
-            <a href="https://de.linkedin.com/in/ashvak-govindarajula">@AshvakTheInsightEngineer</a></p>
-        <ul class="actions">
-            <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-        </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Key Skills</h2>
+        <div class="skill-bar">
+            <span>Python</span>
+            <div class="progress"><div style="width: 90%;"></div></div>
+        </div>
+        <div class="skill-bar">
+            <span>SQL</span>
+            <div class="progress"><div style="width: 95%;"></div></div>
+        </div>
+        <div class="skill-bar">
+            <span>AWS</span>
+            <div class="progress"><div style="width: 90%;"></div></div>
+        </div>
+        <div class="skill-bar">
+            <span>Power BI</span>
+            <div class="progress"><div style="width: 90%;"></div></div>
+        </div>
+    </section>
+<!-- Projects Section -->
+<section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="project-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+            <img src="images/claims_performance_dashboard.png" alt="Claims Performance Dashboard">
+            <div class="card-content">
+                <h3>Claims Performance Dashboard</h3>
+                <p>Analyzed claims data with Power BI to identify cost patterns and improve provider performance.</p>
+                <a href="https://github.com/Ashvakg/Zomato-Delivery-Efficiency_Analyzing-and-Predicting-Factors?tab=readme-ov-file" target="_blank" class="button">View Details</a>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <img src="images/helpline_dashboard.png" alt="Helpline Dashboard">
+            <div class="card-content">
+                <h3>Helpline Dashboard</h3>
+                <p>Interactive dashboard tracking helpline KPIs, enabling better traffic management decisions.</p>
+                <a href="https://github.com/Ashvakg/Helpline-Dashboard" target="_blank" class="button">View Details</a>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+            <img src="images/zomato_Insights_page-0001.jpg" alt="Logistics Efficiency Insights">
+            <div class="card-content">
+                <h3>Logistics Efficiency Insights</h3>
+                <p>Optimized delivery performance with predictive analytics and Power BI dashboards.</p>
+                <a href="https://github.com/Ashvakg/Zomato-Delivery-Efficiency_Analyzing-and-Predicting-Factors?tab=readme-ov-file" target="_blank" class="button">View Details</a>
+            </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+            <img src="images/ETL Pipeline.png" alt="Building Scalable End-to-End Pipeline">
+            <div class="card-content">
+                <h3>Building Scalable End-to-End Pipeline</h3>
+                <p>Designed ETL pipelines on AWS EC2 and S3, automating data workflows and enabling insightful analysis.</p>
+                <a href="https://github.com/Ashvakg/Just_Eat_Takeaway_Data-Engineering" target="_blank" class="button">View Details</a>
+            </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card">
+            <img src="images/Queried the data using AWS Athena.png" alt="Optimized Clickstream Analytics">
+            <div class="card-content">
+                <h3>Optimized Clickstream Analytics</h3>
+                <p>Built real-time data pipelines leveraging AWS Kinesis, Glue, Athena, and Redshift for advanced analytics.</p>
+                <a href="https://github.com/Ashvakg/Clickstream_Data-Pipeline" target="_blank" class="button">View Details</a>
+            </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card">
+            <img src="images/Ashvak_HR_Analytics_Project_Snapshot_page-0001.jpg" alt="Mapping Work Location Trends">
+            <div class="card-content">
+                <h3>Mapping Work Location Trends</h3>
+                <p>Power BI and DAX for analyzing employee work location trends and creating interactive dashboards.</p>
+                <a href="https://github.com/Ashvakg/Work-Location-Trends_Power-BI" target="_blank" class="button">View Details</a>
+            </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card">
+            <img src="images/ETL_Pipeline_2.png" alt="Data Pipeline for Clickstream Data">
+            <div class="card-content">
+                <h3>Data Pipeline for Clickstream Data</h3>
+                <p>Developed automated pipelines with Lambda, DynamoDB, S3, and Redshift for real-time clickstream data.</p>
+                <a href="https://github.com/Ashvakg/Data-pipeline-for-clickstream-data-utilizing-AWS" target="_blank" class="button">View Details</a>
+            </div>
+        </div>
     </div>
+</section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ashvak G | <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+        new Typed('.typed-subtitle', {
+            strings: ["Transforming Raw Data", "Building Scalable Pipelines", "Generating Insights"],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true
+        });
+    </script>
 </body>
-</html>
-
-
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Latest Projects</a>
-					</header>
-
-				<!-- Nav -->
-					<nav id="nav">
-						
-						</ul>
-						<ul class="icons">
-							<li><a href="mailto:ashvak979@gmail.com">Gmail</a></li>
-							<li><a href="https://de.linkedin.com/in/ashvak-govindarajula" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/Ashvakg" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-					<!-- Posts -->
-<section class="Featured-Posts">
-    <article>
-        <header>
-            <h2>
-                <a href="#">Claims performance dashboard</a>
-            </h2>
-            <p>Developed a Power BI dashboard to conduct a thorough analysis of claims data for a specific insurance policy. The dashboard provides key insights into claim volumes, costs, and patterns, aiding in the identification of high utilization reasons, abnormal findings, and provider performance.</p>
-        </header>
-        
-        <div class="image-grid">
-            <div class="image fit">
-                <a href="https://github.com/Ashvakg/Zomato-Delivery-Efficiency_Analyzing-and-Predicting-Factors?tab=readme-ov-file">
-                    <img src="images/claims_performance_dashboard.png" alt="" />
-                </a>
-            </div>
-        </div>
-        
-        <ul class="actions special">
-            <li>
-                <a href="https://github.com/Ashvakg/Zomato-Delivery-Efficiency_Analyzing-and-Predicting-Factors?tab=readme-ov-file" class="button large">Full Story</a>
-            </li>
-        </ul>
-    </article>
-</section>
-
-
-					<!-- Posts -->
-<section class="Featured-Posts">
-    <article>
-        <header>
-            <h2>
-                <a href="#">Helpline dashboard</a>
-            </h2>
-            <p>This Power BI dashboard analyzes helpline operations over a specific period, focusing on key performance indicators (KPIs) such as total calls, attended calls, abandoned calls, and average call handling times. The dashboard allows users to drill down into data by Hotline and Queue Name, enabling detailed analysis of call trends, traffic, and queue management.</p>
-        </header>
-        
-        <div class="image-grid">
-            <div class="image fit">
-                <a href="https://github.com/Ashvakg/Helpline-Dashboard">
-                    <img src="images/helpline_dashboard.png" alt="" />
-                </a>
-            </div>
-        </div>
-        
-        <ul class="actions special">
-            <li>
-                <a href="https://github.com/Ashvakg/Helpline-Dashboard" class="button large">Full Story</a>
-            </li>
-        </ul>
-    </article>
-</section>
-
-
-
-						<!-- Posts -->
-						<section class="Featured-Posts">
-							<article>
-								<header>
-										<h2><a href="#">Unveiling Logistics Efficiency: Data-driven insights & Predictive modeling<br />
-										</a></h2>
-										<p>The project entailed cleaning and preprocessing a sizable dataset for Zomato in major cities of India, followed by feature engineering to facilitate predictive analysis. A Power BI dashboard was developed to offer real-time insights into delivery performance, highlighting trends and potential issues. Matplotlib was utilized for data visualization, showcasing key correlations such as vehicle distribution and traffic density. Machine learning models, including XGBoost and RandomForest, were employed to predict delivery times with notable accuracy improvements. Redshift for data warehousing storing and querying.</p>
- 									</header>
-									 <div class="image-grid">
-										<div class="image fit">
-											<a href="https://github.com/Ashvakg/Zomato-Delivery-Efficiency_Analyzing-and-Predicting-Factors?tab=readme-ov-file">
-												<img src="images/zomato_Insights_page-0001.jpg" alt="" />
-											<ul class="actions special">
-												<li><a href="https://github.com/Ashvakg/Zomato-Delivery-Efficiency_Analyzing-and-Predicting-Factors?tab=readme-ov-file" class="button large">Full Story</a></li>
-											</ul>
-										</article>
-									</section>
-									
-						<section class="Featured-Posts">
-							<article>
-								<header>
-								<h2><a href="#">Building Scalable end-to-end Pipeline on AWS</a></h2>
-								<p>The project aimed to optimize data analysis by transforming a flat file into dimensions and facts using dimension modeling. An end-to-end ETL pipeline was built on AWS EC2, ensuring seamless data flow to AWS S3 and leveraging Mage-ai (an ETL tool similar to popular alternatives like Informatica) for automation, reducing manual work. The established infrastructure is scalable and integrates with Athena or AWS QuickSight/Power BI, enabling insightful data analysis for business needs.</p>
-							</header>
-							<a href="https://github.com/Ashvakg/Just_Eat_Takeaway_Data-Engineering" class="image main"><img src="images/ETL Pipeline.png" alt="" /></a>
-							<ul class="actions special">
-								<li><a href="https://github.com/Ashvakg/Just_Eat_Takeaway_Data-Engineering" class="button large">Full Story</a></li>
-							</ul>
-						</article>
-					</section>
-						
-
-							<section class="Featured-Posts">	
-								<article>
-									<header>
-				
-										<h2><a href="#">Optimized Clickstream Analytics: AWS Data Pipeline<br />
-										</a></h2>
-										<p>The project involved developing a clickstream data pipeline, generating random clickstream data using Python, and utilizing AWS Kinesis Firehose to push the data into S3. AWS Glue was employed for automated schema inference and table creation, streamlining the ETL process, and loading transformed data back into S3. Data exploration and analysis were enabled with Athena, offering insights into user behavior.</p>
-									</header>
-									<a href="https://github.com/Ashvakg/Clickstream_Data-Pipeline" class="image fit"><img src="images/Queried the data using AWS Athena.png" alt="" /></a>
-									<ul class="actions special">
-										<li><a href="https://github.com/Ashvakg/Clickstream_Data-Pipeline" class="button large">Full Story</a></li>
-									</ul>
-								</article>
-							</section>
-
-							<section class="Featured-Posts">	
-								<article>
-									<header>
-							
-										<h2><a href="#">Mapping Work Location Trends: Power BI<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/Ashvakg/Work-Location-Trends_Power-BI" class="image fit"><img src="images/Ashvak_HR_Analytics_Project_Snapshot_page-0001.jpg" alt="" /></a>
-									<p>The project focused on leveraging Power BI and DAX for cleaning, validation, and creating new measures to derive deeper insights into work location trends of employees. Through data modeling and interactive dashboard creation, it aimed to provide actionable insights for decision-making processes. Key aspects included identifying patterns in employee preferences, and exploring variations across different locations. Additionally, the project employed data cleaning techniques to ensure data accuracy and reliability, enhancing the overall quality of analysis.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Ashvakg/Work-Location-Trends_Power-BI" class="button large">Full Story</a></li>
-									</ul>
-								</article>
-								
-							</section>
-
-
-							<section class="Featured-Posts">	
-								<article>
-									<header>
-							
-										<h2><a href="#">Data Pipeline for clickstream data using AWS services<br />
-										</a></h2>
-									</header>
-									<p>This project aims to construct a robust data pipeline to enable real-time data transformations, scalable storage, and efficient analysis for actionable insights.</p>
-									<li>Real-time Data Processing: Implemented real-time data processing capabilities using Lambda functions, enabling immediate transformations and enrichment of clickstream data.</li>
-									<li>Scalable Data Storage: Leveraged DynamoDB, S3, and Redshift for scalable and durable storage of clickstream data, accommodating varying data volumes and analytical workloads</li>
-									<li>Efficient Data Analysis: Stored clickstream data in Redshift facilitated efficient querying and analysis, enabling actionable insights for decision-making.</li>
-									<li>Automated Data Pipeline: Established an automated data pipeline from data ingestion to storage and analysis, ensuring reliability and consistency in data processing workflows.</li>
-									<ul class="actions special">
-										<li><a href="https://github.com/Ashvakg/Data-pipeline-for-clickstream-data-utilizing-AWS" class="button large">Full Story</a></li>
-									</ul>
-								</article>
-								
-							</section>
-
-						
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						
-
-						<div class="contact-info">
-							<div class="contact-item">
-								<h3 style="margin: 0;">Phone</h3>
-            					<a href="#" style="margin: 0;">+49 15906327419</a>
-							</div>
-						</div>
-						<div class="space"></div>
-						<div class="contact-info">
-							<div class="contact-item">
-								<h3 style="margin: 0;">Email</h3>
-								<a href="#" style="margin: 0;">ashvak979@gmail.com</a>
-							</div>
-						</div>
-
-						<div class="space"></div>
-						<div class="contact-info">
-							<div class="contact-item">
-								<h3 style="margin: 0;">Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://de.linkedin.com/in/ashvak-govindarajula" style="margin: 0;" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/Ashvakg" style="margin: 0;" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</div>
-						</div>
-					</footer>
-
-				<!-- Copyright -->
-<div id="copyright">
-    <ul>
-        <li>&copy; 2024 Ashvak G. All rights reserved.</li>
-        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-    </ul>
-</div>
-
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>
