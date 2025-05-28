@@ -358,7 +358,7 @@
     max-width: 750px;
     min-height: 450px;
     overflow: hidden;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+    transition: transform 0.3s ease-in-out;
     position: relative;
 }
 
@@ -378,8 +378,8 @@
 }
 
 .project-card:hover {
-    transform: scale(1.15);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Add depth */
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Add depth */
 }
 
 .project-card:hover img {
@@ -402,7 +402,7 @@
     text-align: center;
     padding: 20px;
     opacity: 0; 
-    transition: opacity 0.6s ease-in-out, background 0.6s ease-in-out;
+    transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
 .project-card:hover .overlay {
@@ -450,15 +450,20 @@
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section id="hero">
-        <div>
-            <h1>Welcome to Ashvak's Portfolio</h1>
-            <h2 class="typed-subtitle"></h2>
-            <div class="actions">
-                <a href="#projects" class="button explore-button" aria-label="Explore my work">Explore My Work</a>
-                <a href="files/Ashvak_CV.pdf" download="Ashvak_G_CV" class="button download-button" aria-label="Download my CV">Download My CV</a>
-            </div>
+
+<!-- Navigation -->
+<header class="navbar">
+    <div class="logo"><a href="https://yourwebsite.com">Ashvak Govindarajula</a></div>
+    <div class="menu-icon"><i class="fas fa-bars"></i></div>
+</header>
+
+<!-- Hero Section -->
+<section id="hero">
+    <div class="hero-text">
+        <h1>Unleashing the Power of Data</h1>
+        <div class="arrow-container">
+            <div class="arrow"></div>
+            <div class="tagline">Transforming raw numbers into valuable insights.</div>
         </div>
         <p>
             I design <strong>scalable data pipelines</strong>, build <strong>intelligent dashboards</strong>,  
