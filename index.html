@@ -1,714 +1,754 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashvak Govindarajula - Finance & BI Analytics Portfolio</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Chart.js for skills pie chart -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            font-family: 'Sora', sans-serif;
-            background-color: #FAF3EB; /* Soft Beige */
-            color: #141414; /* Dark Text */
-            line-height: 1.7;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 80px;
-            position: sticky;
-            top: 0;
-            background: #FAF3EB;
-            z-index: 10;
-        }
-
-        .logo a {
-            font-size: 2rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: #141414;
-            letter-spacing: -1px;
-            transition: color 0.3s ease;
-        }
-
-        .logo a:hover {
-            color: #4f9fff;
-        }
-
-        .menu-icon {
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        #hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 100px 120px 40px;
-            height: auto;
-        }
-
-        .hero-text {
-            max-width: 50%;
-        }
-
-        /* Tagline & Text */
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 520;
-            margin-bottom: 10px;
-            letter-spacing: -0.3px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #444;
-            max-width: 650px;
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            margin-top: 15px;
-        }
-
-        .arrow-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-top: 10px;
-        }
-
-        /* L-shaped Arrow */
-        .arrow {
-            position: relative;
-            width: 60px;
-            height: 65px;
-            opacity: 0;
-            animation: arrowAnimation 1s ease-in-out forwards;
-        }
-
-        .arrow::before {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 65px;
-            border-left: 2px solid #141414;
-            border-bottom: 2px solid #141414;
-            left: 0;
-            bottom: 0;
-        }
-
-        .arrow::after {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border-top: 2px solid #141414;
-            border-right: 2px solid #141414;
-            transform: rotate(45deg);
-            left: 58px;
-            bottom: -4px;
-        }
-
-        /* Tagline Styling */
-        .tagline {
-            font-size: 1.55rem;
-            font-weight: 400;
-            color: #141414;
-            font-family: 'Inter', sans-serif;
-            margin-left: 15px;
-            line-height: 1.5;
-            margin-top: 41px;
-        }
-
-        /* Button */
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            border: 2px solid #141414;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #141414;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .button:hover {
-            background: #141414;
-            color: #fff;
-        }
-
-        /* Dynamic Data Animation */
-        .data-visual {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #4f9fff;
-            margin-top: 50px;
-            padding-left: 35px;
-            font-family: 'Inter', sans-serif;
-            animation: fadeInOut 3s infinite alternate, slideUp 2s ease-in-out;
-            text-align: right;
-        }
-
-        @keyframes fadeInOut {
-            from { opacity: 0.5; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Fade-in effect for Hero Section */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Arrow Animation */
-        @keyframes arrowAnimation {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Expertise Strip (NEW) */
-        #expertise {
-            padding: 10px 120px 30px;
-            background-color: #FAF3EB;
-        }
-
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
-            margin-top: 10px;
-        }
-
-        .expertise-card {
-            background: white;
-            border-radius: 16px;
-            padding: 18px 18px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-        }
-
-        .expertise-card h3 {
-            margin: 0 0 8px;
-            font-size: 1.05rem;
-            font-weight: 650;
-            color: #141414;
-        }
-
-        .expertise-card p {
-            margin: 0;
-            font-size: 0.95rem;
-            max-width: 100%;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            .navbar {
-                padding: 20px 40px;
-            }
-
-            #hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 60px;
-                height: auto;
-            }
-
-            .hero-text {
-                max-width: 100%;
-            }
-
-            .data-visual {
-                margin-top: 30px;
-                text-align: center;
-            }
-
-            h1 {
-                font-size: 2.6rem;
-            }
-
-            .tagline {
-                font-size: 1.35rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            #expertise {
-                padding: 10px 40px 30px;
-            }
-
-            .expertise-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Certifications Section */
-        #certifications {
-            text-align: center;
-            padding: 40px 120px 40px;
-            background-color: #FAF3EB;
-        }
-
-        .certifications-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #141414;
-        }
-
-        .certifications-grid {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .certification-card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 280px;
-            flex: 1 1 280px;
-        }
-
-        .cert-badge {
-            width: 100px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        /* Project Section CSS */
-        .projects-section {
-            background-color: #FAF3EB;
-            padding: 20px 120px 80px;
-            text-align: left;
-        }
-
-        .projects-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #141414;
-            margin-bottom: 20px;
-        }
-
-        .filter-container {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 20px;
-            margin: 50px auto;
-            width: 100%;
-            flex-wrap: wrap;
-        }
-
-        .filter-button {
-            background: white;
-            border: 2px solid transparent;
-            padding: 12px 20px;
-            font-size: 1rem;
-            font-weight: 500;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-button.active, .filter-button:hover {
-            border-color: #141414;
-        }
-
-        .projects-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .project-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: 500;
-            width: 100%;
-            max-width: 1000px;
-            min-height: 450px;
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out;
-            position: relative;
-            background: white;
-            border-radius: 20px;
-            padding: 0;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            margin: auto;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .project-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-        }
-
-        .project-card:hover img {
-            transform: scale(1.12);
-        }
-
-        /* Hover Overlay - Fully White Background */
-        .project-card .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            color: #141414;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 28px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
-        }
-
-        .project-card .overlay h3 {
-            margin: 0 0 10px;
-            font-size: 1.6rem;
-        }
-
-        .project-card .overlay p {
-            margin: 0;
-            font-size: 1.05rem;
-            max-width: 720px;
-        }
-
-        .project-card:hover .overlay {
-            opacity: 1;
-            background: white;
-        }
-
-        @media (max-width: 900px) {
-            .projects-section {
-                padding: 20px 40px;
-            }
-
-            .project-card {
-                min-height: 360px;
-            }
-       
-       /* Projects Layout (Grid + Skills Panel) */
-.projects-layout {
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 26px;
-    align-items: start;
-}
-
-/* Sticky Skills Panel */
-.skills-panel {
-    position: sticky;
-    top: 110px; /* below navbar */
-    background: white;
-    border-radius: 20px;
-    padding: 22px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.10);
-}
-
-.skills-panel h3 {
-    margin: 0 0 8px;
-    font-size: 1.2rem;
-    font-weight: 650;
-}
-
-.skills-panel p {
-    margin: 0 0 14px;
-    font-size: 0.95rem;
-    max-width: 100%;
-}
-
-.skills-legend {
-    margin-top: 12px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    color: #444;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 8px 0;
-}
-
-.legend-swatch {
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
-}
-
-/* Responsive: stack chart below projects */
-@media (max-width: 900px) {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashvak Govindarajula - Finance & BI Analytics Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Chart.js (reliable CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Sora', sans-serif;
+      background-color: #FAF3EB; /* Soft Beige */
+      color: #141414; /* Dark Text */
+      line-height: 1.7;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      position: sticky;
+      top: 0;
+      background: #FAF3EB;
+      z-index: 10;
+    }
+
+    .logo a {
+      font-size: 2rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #141414;
+      letter-spacing: -1px;
+      transition: color 0.3s ease;
+    }
+
+    .logo a:hover { color: #4f9fff; }
+
+    .menu-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    #hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 120px 40px;
+      height: auto;
+    }
+
+    .hero-text { max-width: 50%; }
+
+    /* Tagline & Text */
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 520;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 650px;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      margin-top: 15px;
+    }
+
+    .arrow-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    /* L-shaped Arrow */
+    .arrow {
+      position: relative;
+      width: 60px;
+      height: 65px;
+      opacity: 0;
+      animation: arrowAnimation 1s ease-in-out forwards;
+    }
+
+    .arrow::before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 65px;
+      border-left: 2px solid #141414;
+      border-bottom: 2px solid #141414;
+      left: 0;
+      bottom: 0;
+    }
+
+    .arrow::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid #141414;
+      border-right: 2px solid #141414;
+      transform: rotate(45deg);
+      left: 58px;
+      bottom: -4px;
+    }
+
+    /* Tagline Styling */
+    .tagline {
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: #141414;
+      font-family: 'Inter', sans-serif;
+      margin-left: 15px;
+      line-height: 1.5;
+      margin-top: 41px;
+    }
+
+    /* Button */
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      border: 2px solid #141414;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #141414;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .button:hover {
+      background: #141414;
+      color: #fff;
+    }
+
+    /* Dynamic Data Animation */
+    .data-visual {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #4f9fff;
+      margin-top: 50px;
+      padding-left: 35px;
+      font-family: 'Inter', sans-serif;
+      animation: fadeInOut 3s infinite alternate, slideUp 2s ease-in-out;
+      text-align: right;
+    }
+
+    @keyframes fadeInOut { from { opacity: 0.5; } to { opacity: 1; } }
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes arrowAnimation { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Expertise Strip */
+    #expertise {
+      padding: 10px 120px 30px;
+      background-color: #FAF3EB;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .expertise-card {
+      background: white;
+      border-radius: 16px;
+      padding: 18px 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    .expertise-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      font-weight: 650;
+      color: #141414;
+    }
+
+    .expertise-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      max-width: 100%;
+    }
+
+    /* Certifications Section */
+    #certifications {
+      text-align: center;
+      padding: 40px 120px 40px;
+      background-color: #FAF3EB;
+    }
+
+    .certifications-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #141414;
+    }
+
+    .certifications-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .certification-card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 280px;
+      flex: 1 1 280px;
+    }
+
+    .cert-badge {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    /* Projects Section */
+    .projects-section {
+      background-color: #FAF3EB;
+      padding: 20px 120px 80px;
+      text-align: left;
+    }
+
+    .projects-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #141414;
+      margin-bottom: 20px;
+    }
+
+    .filter-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      margin: 50px auto;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .filter-button {
+      background: white;
+      border: 2px solid transparent;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-button.active, .filter-button:hover { border-color: #141414; }
+
+    /* NEW: Projects Layout with Skills Panel */
     .projects-layout {
-        grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 26px;
+      align-items: start;
     }
+
+    .projects-layout > div { min-width: 0; }
+
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+      width: 100%;
+      max-width: 100%;
+      min-height: 450px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      position: relative;
+      background: white;
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 0;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .project-card:hover img { transform: scale(1.12); }
+
+    .project-card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      color: #141414;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 28px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .project-card .overlay h3 {
+      margin: 0 0 10px;
+      font-size: 1.6rem;
+    }
+
+    .project-card .overlay p {
+      margin: 0;
+      font-size: 1.05rem;
+      max-width: 720px;
+    }
+
+    .project-card:hover .overlay { opacity: 1; }
+
+    /* Skills Panel */
     .skills-panel {
-        position: relative;
-        top: auto;
+      position: sticky;
+      top: 110px;
+      background: white;
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.10);
     }
-}         
-        }
 
+    .skills-panel h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
 
+    .skills-panel p {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      max-width: 100%;
+    }
 
-        /* Footer */
-        footer {
-            padding: 40px;
-            background-color: #008080; /* Teal Color */
-            color: #fff;
-            text-align: center;
-        }
+    .chart-wrap {
+      height: 320px; /* ensures chart displays */
+    }
 
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: opacity 0.3s ease;
-        }
+    .skills-legend {
+      margin-top: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: #444;
+    }
 
-        footer a:hover {
-            opacity: 0.7;
-        }
-    </style>
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .legend-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px;
+      background-color: #008080;
+      color: #fff;
+      text-align: center;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.3s ease;
+    }
+
+    footer a:hover { opacity: 0.7; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .navbar { padding: 20px 40px; }
+
+      #hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px;
+      }
+
+      .hero-text { max-width: 100%; }
+      .data-visual { margin-top: 30px; text-align: center; }
+
+      h1 { font-size: 2.6rem; }
+      .tagline { font-size: 1.35rem; }
+      p { font-size: 1rem; }
+
+      #expertise { padding: 10px 40px 30px; }
+      .expertise-grid { grid-template-columns: 1fr; }
+
+      #certifications { padding: 40px 40px 40px; }
+      .projects-section { padding: 20px 40px; }
+
+      .projects-layout { grid-template-columns: 1fr; }
+      .skills-panel { position: relative; top: auto; margin-top: 20px; }
+      .project-card { min-height: 360px; }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- Navigation -->
-<header class="navbar">
+  <!-- Navigation -->
+  <header class="navbar">
     <div class="logo"><a href="#">Ashvak Govindarajula</a></div>
     <div class="menu-icon"><i class="fas fa-bars"></i></div>
-</header>
+  </header>
 
-<!-- Hero Section -->
-<section id="hero">
+  <!-- Hero Section -->
+  <section id="hero">
     <div class="hero-text">
-        <h1>Finance & BI Analytics Specialist</h1>
-        <div class="arrow-container">
-            <div class="arrow"></div>
-            <div class="tagline">Turning financial and operational data into decision-ready insights.</div>
-        </div>
-        <p>
-            I build <strong>finance-grade Power BI dashboards</strong>, design <strong>analytics-ready data models</strong>,
-            and deliver <strong>stakeholder-ready insights</strong> across <strong>ERP</strong>, <strong>insurance</strong>, and <strong>commercial analytics</strong>.
-        </p>
-        <a href="#projects" class="button">View Case Studies</a>
+      <h1>Finance & BI Analytics Specialist</h1>
+      <div class="arrow-container">
+        <div class="arrow"></div>
+        <div class="tagline">Turning financial and operational data into decision-ready insights.</div>
+      </div>
+      <p>
+        I build <strong>finance-grade Power BI dashboards</strong>, design <strong>analytics-ready data models</strong>,
+        and deliver <strong>stakeholder-ready insights</strong> across <strong>ERP</strong>, <strong>insurance</strong>, and <strong>commercial analytics</strong>.
+      </p>
+      <a href="#projects" class="button">View Case Studies</a>
     </div>
 
-    <!-- Dynamic Data Animation -->
     <div class="data-visual">
-        📊 “Empowering financial decisions through analytics.”
+      📊 “Empowering financial decisions through analytics.”
     </div>
-</section>
+  </section>
 
-<!-- Expertise Strip (NEW) -->
-<section id="expertise">
+  <!-- Expertise -->
+  <section id="expertise">
     <div class="expertise-grid">
-        <div class="expertise-card">
-            <h3>ERP & Finance Analytics</h3>
-            <p>Cost tracking, budget variance, reporting automation (D365).</p>
-        </div>
-        <div class="expertise-card">
-            <h3>Insurance Analytics</h3>
-            <p>Claims performance, provider analysis, cost distribution insights.</p>
-        </div>
-        <div class="expertise-card">
-            <h3>Business Intelligence</h3>
-            <p>Power BI, DAX, stakeholder dashboards, KPI frameworks.</p>
-        </div>
-        <div class="expertise-card">
-            <h3>Data Engineering</h3>
-            <p>AWS pipelines, ELT/ETL, analytics-ready datasets for reporting.</p>
-        </div>
+      <div class="expertise-card">
+        <h3>ERP & Finance Analytics</h3>
+        <p>Cost tracking, budget variance, reporting automation (D365).</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Insurance Analytics</h3>
+        <p>Claims performance, provider analysis, cost distribution insights.</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Business Intelligence</h3>
+        <p>Power BI, DAX, stakeholder dashboards, KPI frameworks.</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Data Engineering</h3>
+        <p>AWS pipelines, ELT/ETL, analytics-ready datasets for reporting.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Certifications Section -->
-<section id="certifications">
+  <!-- Certifications -->
+  <section id="certifications">
     <h2 class="certifications-title">Professional Certifications</h2>
     <div class="certifications-grid">
-        <div class="certification-card">
-            <img src="images/aws-certified-data-engineer-associate.png" alt="AWS Certified Data Engineer" class="cert-badge">
-            <h3>AWS Certified Data Engineer</h3>
-            <p>Validated expertise in designing and building data pipelines on AWS.</p>
-        </div>
+      <div class="certification-card">
+        <img src="images/aws-certified-data-engineer-associate.png" alt="AWS Certified Data Engineer" class="cert-badge">
+        <h3>AWS Certified Data Engineer</h3>
+        <p>Validated expertise in designing and building data pipelines on AWS.</p>
+      </div>
 
-        <div class="certification-card">
-            <img src="images/google-data-analytics-professional-certificate.2.png" alt="Google Professional Data Analytics" class="cert-badge">
-            <h3>Google Professional Data Analytics</h3>
-            <p>Demonstrated proficiency in analyzing and visualizing data for business insights.</p>
-        </div>
+      <div class="certification-card">
+        <img src="images/google-data-analytics-professional-certificate.2.png" alt="Google Professional Data Analytics" class="cert-badge">
+        <h3>Google Professional Data Analytics</h3>
+        <p>Demonstrated proficiency in analyzing and visualizing data for business insights.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Projects Section -->
-<section id="projects" class="projects-section">
+  <!-- Projects -->
+  <section id="projects" class="projects-section">
     <h2 class="projects-title">Selected Case Studies</h2>
+
     <div class="filter-container">
-        <button class="filter-button active" data-category="all">All</button>
-        <button class="filter-button" data-category="BI-Analytics">BI & Analytics</button>
-        <button class="filter-button" data-category="Data-Engineering">Data Engineering</button>
-        <button class="filter-button" data-category="Machine-Learning">Machine Learning</button>
+      <button class="filter-button active" data-category="all">All</button>
+      <button class="filter-button" data-category="BI-Analytics">BI & Analytics</button>
+      <button class="filter-button" data-category="Data-Engineering">Data Engineering</button>
+      <button class="filter-button" data-category="Machine-Learning">Machine Learning</button>
     </div>
 
     <div class="projects-layout">
 
-    <!-- LEFT: Projects -->
-    <div>
+      <!-- LEFT: Projects -->
+      <div>
         <div class="projects-grid">
-            <!-- BI & Analytics -->
-            <div class="project-card" data-category="BI-Analytics" data-project="Helpline Dashboard">
-                <img src="images/helpline_dashboard.png" alt="Helpline Dashboard">
-                <div class="overlay">
-                    <h3>Helpline Dashboard</h3>
-                    <p>Operational KPIs (call volume, response times, resolution) built in Power BI with DAX-driven metrics.</p>
-                </div>
-            </div>
 
-            <div class="project-card" data-category="BI-Analytics" data-project="Claims Performance Analysis">
-                <img src="images/claims_performance_dashboard.png" alt="Claims Performance Analysis">
-                <div class="overlay">
-                    <h3>Claims Performance Analysis</h3>
-                    <p>Insurance claims analytics to identify cost drivers and provider-level performance using interactive Power BI views.</p>
-                </div>
+          <div class="project-card" data-category="BI-Analytics" data-project="Helpline Dashboard">
+            <img src="images/helpline_dashboard.png" alt="Helpline Dashboard">
+            <div class="overlay">
+              <h3>Helpline Dashboard</h3>
+              <p>Operational KPIs (call volume, response times, resolution) built in Power BI with DAX-driven metrics.</p>
             </div>
+          </div>
 
-            <div class="project-card" data-category="BI-Analytics" data-project="Work Location Trends">
-                <img src="images/Ashvak_HR_Analytics_Project_Snapshot_page-0001.jpg" alt="Work Location Trends">
-                <div class="overlay">
-                    <h3>Work Location Trends</h3>
-                    <p>HR analytics on remote vs on-site patterns, enabling location-based insights for workforce planning.</p>
-                </div>
+          <div class="project-card" data-category="BI-Analytics" data-project="Claims Performance Analysis">
+            <img src="images/claims_performance_dashboard.png" alt="Claims Performance Analysis">
+            <div class="overlay">
+              <h3>Claims Performance Analysis</h3>
+              <p>Insurance claims analytics to identify cost drivers and provider-level performance using interactive Power BI views.</p>
             </div>
+          </div>
 
-            <!-- Machine Learning -->
-            <div class="project-card" data-category="Machine-Learning" data-project="Zomato Delivery Prediction">
-                <img src="images/zomato_Insights_page-0001.jpg" alt="Zomato Delivery Prediction">
-                <div class="overlay">
-                    <h3>Zomato Delivery Prediction</h3>
-                    <p>Delivery-time prediction using feature engineering and ML models, paired with BI dashboards for performance insights.</p>
-                </div>
+          <div class="project-card" data-category="BI-Analytics" data-project="Work Location Trends">
+            <img src="images/Ashvak_HR_Analytics_Project_Snapshot_page-0001.jpg" alt="Work Location Trends">
+            <div class="overlay">
+              <h3>Work Location Trends</h3>
+              <p>HR analytics on remote vs on-site patterns, enabling location-based insights for workforce planning.</p>
             </div>
+          </div>
 
-            <!-- Data Engineering -->
-            <div class="project-card" data-category="Data-Engineering" data-project="Just Eat Takeaway Pipeline">
-                <img src="images/ETL Pipeline.png" alt="Just Eat Takeaway Pipeline">
-                <div class="overlay">
-                    <h3>Just Eat Takeaway Pipeline</h3>
-                    <p>AWS-based ETL pipeline to ingest, transform, and load data for analytics-ready reporting.</p>
-                </div>
+          <div class="project-card" data-category="Machine-Learning" data-project="Zomato Delivery Prediction">
+            <img src="images/zomato_Insights_page-0001.jpg" alt="Zomato Delivery Prediction">
+            <div class="overlay">
+              <h3>Zomato Delivery Prediction</h3>
+              <p>Delivery-time prediction using feature engineering and ML models, paired with BI dashboards for performance insights.</p>
             </div>
+          </div>
 
-            <div class="project-card" data-category="Data-Engineering" data-project="AWS Clickstream Data Pipeline">
-                <img src="images/Queried the data using AWS Athena.png" alt="AWS Clickstream Pipeline">
-                <div class="overlay">
-                    <h3>AWS Clickstream Data Pipeline</h3>
-                    <p>Real-time clickstream ingestion and analysis using AWS services (streaming → data lake → query layer).</p>
-                </div>
+          <div class="project-card" data-category="Data-Engineering" data-project="Just Eat Takeaway Pipeline">
+            <img src="images/ETL Pipeline.png" alt="Just Eat Takeaway Pipeline">
+            <div class="overlay">
+              <h3>Just Eat Takeaway Pipeline</h3>
+              <p>AWS-based ETL pipeline to ingest, transform, and load data for analytics-ready reporting.</p>
             </div>
+          </div>
+
+          <div class="project-card" data-category="Data-Engineering" data-project="AWS Clickstream Data Pipeline">
+            <img src="images/Queried the data using AWS Athena.png" alt="AWS Clickstream Pipeline">
+            <div class="overlay">
+              <h3>AWS Clickstream Data Pipeline</h3>
+              <p>Real-time clickstream ingestion and analysis using AWS services (streaming → data lake → query layer).</p>
+            </div>
+          </div>
+
         </div>
-    </div>
+      </div>
 
-    <!-- RIGHT: Skills Pie Chart -->
-    <aside class="skills-panel">
+      <!-- RIGHT: Skills Pie Chart -->
+      <aside class="skills-panel">
         <h3 id="skillsTitle">Skills Composition</h3>
         <p id="skillsSubtitle">Click a case study to view the skill mix recruiters care about.</p>
 
-        <canvas id="skillsChart" width="320" height="320"></canvas>
+        <div class="chart-wrap">
+          <canvas id="skillsChart"></canvas>
+        </div>
 
         <div class="skills-legend" id="skillsLegend"></div>
-    </aside>
+      </aside>
 
-</div>
-</section>
+    </div>
+  </section>
 
-<!-- Footer -->
-<footer>
+  <!-- Footer -->
+  <footer>
     <p>
-        Connect with me:
-        <a href="https://www.linkedin.com/in/ash-gov/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        |
-        <a href="mailto:ashvak979@gmail.com">Email</a>
+      Connect with me:
+      <a href="https://www.linkedin.com/in/ash-gov/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+      <a href="mailto:ashvak979@gmail.com">Email</a>
     </p>
-</footer>
+  </footer>
 
-<script>
+  <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const buttons = document.querySelectorAll(".filter-button");
-        const projects = document.querySelectorAll(".project-card");
+      const buttons = document.querySelectorAll(".filter-button");
+      const projects = document.querySelectorAll(".project-card");
 
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                const category = button.getAttribute("data-category");
+      const skillProfiles = {
+        "Overall": {
+          title: "Skills Composition",
+          subtitle: "Click a case study to view the skill mix recruiters care about.",
+          skills: { "SQL": 35, "Power BI / DAX": 30, "Python": 20, "AWS": 15 }
+        },
+        "Helpline Dashboard": {
+          title: "Helpline Dashboard – Skill Mix",
+          subtitle: "Operations BI with KPI modeling and stakeholder reporting.",
+          skills: { "Power BI / DAX": 55, "SQL": 25, "KPI Design": 20 }
+        },
+        "Claims Performance Analysis": {
+          title: "Claims Performance – Skill Mix",
+          subtitle: "Insurance analytics: cost drivers and provider performance.",
+          skills: { "Power BI / DAX": 45, "SQL": 35, "Insights": 20 }
+        },
+        "Work Location Trends": {
+          title: "Work Location Trends – Skill Mix",
+          subtitle: "HR analytics and trend reporting with interactive visuals.",
+          skills: { "Power BI / DAX": 45, "SQL": 30, "Storytelling": 25 }
+        },
+        "Zomato Delivery Prediction": {
+          title: "Delivery Prediction – Skill Mix",
+          subtitle: "Feature engineering + ML modeling supported by BI insights.",
+          skills: { "Python": 45, "ML": 25, "Power BI": 15, "SQL": 15 }
+        },
+        "Just Eat Takeaway Pipeline": {
+          title: "Just Eat Pipeline – Skill Mix",
+          subtitle: "ETL/ELT pipeline work for analytics-ready layers.",
+          skills: { "AWS": 40, "Python": 25, "SQL": 20, "Modeling": 15 }
+        },
+        "AWS Clickstream Data Pipeline": {
+          title: "Clickstream Pipeline – Skill Mix",
+          subtitle: "Streaming → data lake → query layer.",
+          skills: { "AWS": 50, "Data Eng": 25, "SQL": 15, "Ops": 10 }
+        }
+      };
 
-                // Remove active class from all buttons & add to the clicked one
-                buttons.forEach(btn => btn.classList.remove("active"));
-                button.classList.add("active");
+      const canvas = document.getElementById("skillsChart");
+      const ctx = canvas.getContext("2d");
+      let chart;
 
-                projects.forEach(project => {
-                    const match = (category === "all" || project.getAttribute("data-category") === category);
-
-                    if (match) {
-                        project.style.display = "flex";
-                        project.style.opacity = "0";
-                        project.style.transform = "scale(0.94)";
-                        setTimeout(() => {
-                            project.style.opacity = "1";
-                            project.style.transform = "scale(1)";
-                        }, 180);
-                    } else {
-                        project.style.opacity = "0";
-                        project.style.transform = "scale(0.94)";
-                        setTimeout(() => {
-                            project.style.display = "none";
-                        }, 180);
-                    }
-                });
-            });
+      function renderLegend(labels, colors, values) {
+        const legend = document.getElementById("skillsLegend");
+        legend.innerHTML = "";
+        labels.forEach((label, i) => {
+          const row = document.createElement("div");
+          row.className = "legend-item";
+          row.innerHTML = `
+            <span class="legend-swatch" style="background:${colors[i]}"></span>
+            <span>${label}: <strong>${values[i]}%</strong></span>
+          `;
+          legend.appendChild(row);
         });
+      }
+
+      function updateSkillsChart(projectKey) {
+        const profile = skillProfiles[projectKey] || skillProfiles["Overall"];
+        const labels = Object.keys(profile.skills);
+        const values = Object.values(profile.skills);
+
+        const colors = ["#4f9fff", "#141414", "#008080", "#d6b99c", "#666666", "#b08968"];
+
+        document.getElementById("skillsTitle").textContent = profile.title;
+        document.getElementById("skillsSubtitle").textContent = profile.subtitle;
+
+        if (chart) chart.destroy();
+
+        chart = new Chart(ctx, {
+          type: "pie",
+          data: {
+            labels,
+            datasets: [{
+              data: values,
+              backgroundColor: labels.map((_, i) => colors[i % colors.length]),
+              borderWidth: 0
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: (c) => ` ${c.label}: ${c.raw}%`
+                }
+              }
+            }
+          }
+        });
+
+        renderLegend(labels, labels.map((_, i) => colors[i % colors.length]), values);
+      }
+
+      // Default chart
+      updateSkillsChart("Overall");
+
+      // Click project -> update chart
+      projects.forEach(card => {
+        card.addEventListener("click", () => {
+          updateSkillsChart(card.getAttribute("data-project"));
+        });
+      });
+
+      // Filter logic
+      buttons.forEach(button => {
+        button.addEventListener("click", () => {
+          const category = button.getAttribute("data-category");
+
+          buttons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          projects.forEach(project => {
+            const match = (category === "all" || project.getAttribute("data-category") === category);
+            if (match) {
+              project.style.display = "flex";
+              project.style.opacity = "0";
+              project.style.transform = "scale(0.94)";
+              setTimeout(() => {
+                project.style.opacity = "1";
+                project.style.transform = "scale(1)";
+              }, 180);
+            } else {
+              project.style.opacity = "0";
+              project.style.transform = "scale(0.94)";
+              setTimeout(() => { project.style.display = "none"; }, 180);
+            }
+          });
+        });
+      });
     });
-</script>
+  </script>
 
 </body>
 </html>
