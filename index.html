@@ -10,6 +10,9 @@
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Chart.js for skills pie chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
         /* General Styles */
@@ -425,7 +428,70 @@
             .project-card {
                 min-height: 360px;
             }
+       
+       /* Projects Layout (Grid + Skills Panel) */
+.projects-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 26px;
+    align-items: start;
+}
+
+/* Sticky Skills Panel */
+.skills-panel {
+    position: sticky;
+    top: 110px; /* below navbar */
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.10);
+}
+
+.skills-panel h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+    font-weight: 650;
+}
+
+.skills-panel p {
+    margin: 0 0 14px;
+    font-size: 0.95rem;
+    max-width: 100%;
+}
+
+.skills-legend {
+    margin-top: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+/* Responsive: stack chart below projects */
+@media (max-width: 900px) {
+    .projects-layout {
+        grid-template-columns: 1fr;
+    }
+    .skills-panel {
+        position: relative;
+        top: auto;
+    }
+}         
         }
+
+
 
         /* Footer */
         footer {
@@ -526,59 +592,75 @@
         <button class="filter-button" data-category="Machine-Learning">Machine Learning</button>
     </div>
 
-    <div class="projects-grid">
-        <!-- BI & Analytics -->
-        <div class="project-card" data-category="BI-Analytics">
-            <!-- IMPORTANT: Use relative paths; Windows absolute paths won't work on GitHub Pages -->
-            <img src="images/helpline_dashboard.png" alt="Helpline Dashboard">
-            <div class="overlay">
-                <h3>Helpline Dashboard</h3>
-                <p>Operational KPIs (call volume, response times, resolution) built in Power BI with DAX-driven metrics.</p>
-            </div>
-        </div>
+    <div class="projects-layout">
 
-        <div class="project-card" data-category="BI-Analytics">
-            <img src="images/claims_performance_dashboard.png" alt="Claims Performance Analysis">
-            <div class="overlay">
-                <h3>Claims Performance Analysis</h3>
-                <p>Insurance claims analytics to identify cost drivers and provider-level performance using interactive Power BI views.</p>
+    <!-- LEFT: Projects -->
+    <div>
+        <div class="projects-grid">
+            <!-- BI & Analytics -->
+            <div class="project-card" data-category="BI-Analytics" data-project="Helpline Dashboard">
+                <img src="images/helpline_dashboard.png" alt="Helpline Dashboard">
+                <div class="overlay">
+                    <h3>Helpline Dashboard</h3>
+                    <p>Operational KPIs (call volume, response times, resolution) built in Power BI with DAX-driven metrics.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="project-card" data-category="BI-Analytics">
-            <img src="images/Ashvak_HR_Analytics_Project_Snapshot_page-0001.jpg" alt="Work Location Trends">
-            <div class="overlay">
-                <h3>Work Location Trends</h3>
-                <p>HR analytics on remote vs on-site patterns, enabling location-based insights for workforce planning.</p>
+            <div class="project-card" data-category="BI-Analytics" data-project="Claims Performance Analysis">
+                <img src="images/claims_performance_dashboard.png" alt="Claims Performance Analysis">
+                <div class="overlay">
+                    <h3>Claims Performance Analysis</h3>
+                    <p>Insurance claims analytics to identify cost drivers and provider-level performance using interactive Power BI views.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Machine Learning -->
-        <div class="project-card" data-category="Machine-Learning">
-            <img src="images/zomato_Insights_page-0001.jpg" alt="Zomato Delivery Prediction">
-            <div class="overlay">
-                <h3>Zomato Delivery Prediction</h3>
-                <p>Delivery-time prediction using feature engineering and ML models, paired with BI dashboards for performance insights.</p>
+            <div class="project-card" data-category="BI-Analytics" data-project="Work Location Trends">
+                <img src="images/Ashvak_HR_Analytics_Project_Snapshot_page-0001.jpg" alt="Work Location Trends">
+                <div class="overlay">
+                    <h3>Work Location Trends</h3>
+                    <p>HR analytics on remote vs on-site patterns, enabling location-based insights for workforce planning.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Data Engineering -->
-        <div class="project-card" data-category="Data-Engineering">
-            <img src="images/ETL Pipeline.png" alt="Just Eat Takeaway Pipeline">
-            <div class="overlay">
-                <h3>Just Eat Takeaway Pipeline</h3>
-                <p>AWS-based ETL pipeline to ingest, transform, and load data for analytics-ready reporting (S3/Redshift/ETL orchestration).</p>
+            <!-- Machine Learning -->
+            <div class="project-card" data-category="Machine-Learning" data-project="Zomato Delivery Prediction">
+                <img src="images/zomato_Insights_page-0001.jpg" alt="Zomato Delivery Prediction">
+                <div class="overlay">
+                    <h3>Zomato Delivery Prediction</h3>
+                    <p>Delivery-time prediction using feature engineering and ML models, paired with BI dashboards for performance insights.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="project-card" data-category="Data-Engineering">
-            <img src="images/Queried the data using AWS Athena.png" alt="AWS Clickstream Pipeline">
-            <div class="overlay">
-                <h3>AWS Clickstream Data Pipeline</h3>
-                <p>Real-time clickstream ingestion and analysis using AWS services (streaming → data lake → query layer).</p>
+            <!-- Data Engineering -->
+            <div class="project-card" data-category="Data-Engineering" data-project="Just Eat Takeaway Pipeline">
+                <img src="images/ETL Pipeline.png" alt="Just Eat Takeaway Pipeline">
+                <div class="overlay">
+                    <h3>Just Eat Takeaway Pipeline</h3>
+                    <p>AWS-based ETL pipeline to ingest, transform, and load data for analytics-ready reporting.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="Data-Engineering" data-project="AWS Clickstream Data Pipeline">
+                <img src="images/Queried the data using AWS Athena.png" alt="AWS Clickstream Pipeline">
+                <div class="overlay">
+                    <h3>AWS Clickstream Data Pipeline</h3>
+                    <p>Real-time clickstream ingestion and analysis using AWS services (streaming → data lake → query layer).</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- RIGHT: Skills Pie Chart -->
+    <aside class="skills-panel">
+        <h3 id="skillsTitle">Skills Composition</h3>
+        <p id="skillsSubtitle">Click a case study to view the skill mix recruiters care about.</p>
+
+        <canvas id="skillsChart" width="320" height="320"></canvas>
+
+        <div class="skills-legend" id="skillsLegend"></div>
+    </aside>
+
+</div>
 </section>
 
 <!-- Footer -->
