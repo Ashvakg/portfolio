@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashvak Govindarajula - Data Portfolio</title>
+    <title>Ashvak Govindarajula - Finance & BI Analytics Portfolio</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -76,7 +76,7 @@
         p {
             font-size: 1.1rem;
             color: #444;
-            max-width: 600px;
+            max-width: 650px;
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             margin-top: 15px;
@@ -123,7 +123,7 @@
 
         /* Tagline Styling */
         .tagline {
-            font-size: 1.6rem;
+            font-size: 1.55rem;
             font-weight: 400;
             color: #141414;
             font-family: 'Inter', sans-serif;
@@ -186,6 +186,39 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Expertise Strip (NEW) */
+        #expertise {
+            padding: 10px 120px 30px;
+            background-color: #FAF3EB;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .expertise-card {
+            background: white;
+            border-radius: 16px;
+            padding: 18px 18px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        }
+
+        .expertise-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
+            font-weight: 650;
+            color: #141414;
+        }
+
+        .expertise-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            max-width: 100%;
+        }
+
         /* Responsive Design */
         @media (max-width: 900px) {
             .navbar {
@@ -209,225 +242,190 @@
             }
 
             h1 {
-                font-size: 2.8rem;
+                font-size: 2.6rem;
             }
 
             .tagline {
-                font-size: 1.4rem;
+                font-size: 1.35rem;
             }
 
             p {
                 font-size: 1rem;
             }
-            @media (max-width: 768px) {
-                
-    .filter-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 
-    .filter-button {
-        padding: 10px 16px; /* Smaller padding on mobile */
-        font-size: 0.9rem;
-    }
-}
+            #expertise {
+                padding: 10px 40px 30px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
         }
-/* Certifications Section */
-#certifications {
-    text-align: center;
-    padding: 40px 120px 40px;
-    background-color: #FAF3EB; /* Matches your site background */
-}
 
-/* Title */
-.certifications-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #141414;
-}
+        /* Certifications Section */
+        #certifications {
+            text-align: center;
+            padding: 40px 120px 40px;
+            background-color: #FAF3EB;
+        }
 
-/* Grid Layout for Certifications */
-.certifications-grid {
-    display: flex; /* Enables side-by-side layout */
-    justify-content: center; /* Centers items horizontally */
-    gap: 30px; /* Adds space between items */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-}
+        .certifications-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #141414;
+        }
 
-/* Individual Certification Cards */
-.certification-card {
-    background: white; /* White card for contrast */
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    text-align: center;
-    max-width: 280px;
-    flex: 1 1 280px; /* Ensures even spacing */
-}
+        .certifications-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
 
-/* Badge Image Styling */
-.cert-badge {
-    width: 100px; /* Adjust the size of the badge */
-    height: auto;
-    margin-bottom: 10px;
-}
+        .certification-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 280px;
+            flex: 1 1 280px;
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .certifications-grid {
-        flex-direction: column; /* Stacks items vertically on smaller screens */
-        align-items: center;
-    }
-}
+        .cert-badge {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .certifications-grid {
-        flex-direction: column; /* Stacks items vertically on smaller screens */
-        align-items: center;
-    }
-}
+        /* Project Section CSS */
+        .projects-section {
+            background-color: #FAF3EB;
+            padding: 20px 120px 80px;
+            text-align: left;
+        }
 
-/* Project Section CSS - Updated Layout with Larger Images and Chart Next to Project */
-.projects-section {
-    background-color: #FAF3EB;
-    padding: 20px 120px 80px;
-    text-align: left;
-}
+        .projects-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #141414;
+            margin-bottom: 20px;
+        }
 
-.projects-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #141414;
-    margin-bottom: 20px;
-}
+        .filter-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            margin: 50px auto;
+            width: 100%;
+            flex-wrap: wrap;
+        }
 
-.filter-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-    margin: 50px auto;
-    width: 100%;
-}
+        .filter-button {
+            background: white;
+            border: 2px solid transparent;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-.filter-button {
-    background: white;
-    border: 2px solid transparent;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+        .filter-button.active, .filter-button:hover {
+            border-color: #141414;
+        }
 
-.filter-button.active, .filter-button:hover {
-    border-color: #141414;
-}
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
 
-.projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 450px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
 
-.project-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
-}
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
 
-.project-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-    width: 60%; /* Increased width for larger images */
-    max-width: 750px;
-    min-height: 450px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    position: relative;
-}
+        .project-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+        }
 
-.project-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
+        .project-card:hover img {
+            transform: scale(1.12);
+        }
 
-.project-chart {
-    width: 38%; /* Adjusted for balanced layout */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        /* Hover Overlay - Fully White Background */
+        .project-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            color: #141414;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 28px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
+        }
 
-.project-card:hover {
-    transform: scale(1.08);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Add depth */
-}
+        .project-card .overlay h3 {
+            margin: 0 0 10px;
+            font-size: 1.6rem;
+        }
 
-.project-card:hover img {
-    transform: scale(1.2);
-}
+        .project-card .overlay p {
+            margin: 0;
+            font-size: 1.05rem;
+            max-width: 720px;
+        }
 
-/* Hover Overlay - Fully White Background */
-.project-card .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white; /* Fully white background */
-    color: #141414;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    opacity: 0; 
-    transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
-}
+        .project-card:hover .overlay {
+            opacity: 1;
+            background: white;
+        }
 
-.project-card:hover .overlay {
-    opacity: 1;
-    background: white; /* Ensure full opacity */
-}
+        @media (max-width: 900px) {
+            .projects-section {
+                padding: 20px 40px;
+            }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-    .projects-section {
-        padding: 20px 40px;
-    }
-    .projects-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .project-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .project-card, .project-chart {
-        width: 100%;
-    }
-}
+            .project-card {
+                min-height: 360px;
+            }
+        }
 
         /* Footer */
         footer {
@@ -453,28 +451,50 @@
 
 <!-- Navigation -->
 <header class="navbar">
-    <div class="logo"><a href="https://yourwebsite.com">Ashvak Govindarajula</a></div>
+    <div class="logo"><a href="#">Ashvak Govindarajula</a></div>
     <div class="menu-icon"><i class="fas fa-bars"></i></div>
 </header>
 
 <!-- Hero Section -->
 <section id="hero">
     <div class="hero-text">
-        <h1>Unleashing the Power of Data</h1>
+        <h1>Finance & BI Analytics Specialist</h1>
         <div class="arrow-container">
             <div class="arrow"></div>
-            <div class="tagline">Transforming raw numbers into valuable insights.</div>
+            <div class="tagline">Turning financial and operational data into decision-ready insights.</div>
         </div>
         <p>
-            I design <strong>scalable data pipelines</strong>, build <strong>intelligent dashboards</strong>,  
-            and drive <strong>business impact</strong> through <strong>data engineering & analytics</strong>.
+            I build <strong>finance-grade Power BI dashboards</strong>, design <strong>analytics-ready data models</strong>,
+            and deliver <strong>stakeholder-ready insights</strong> across <strong>ERP</strong>, <strong>insurance</strong>, and <strong>commercial analytics</strong>.
         </p>
-        <a href="#projects" class="button">Explore My Work</a>
+        <a href="#projects" class="button">View Case Studies</a>
     </div>
 
     <!-- Dynamic Data Animation -->
     <div class="data-visual">
-        📊 "Data isn't just numbers, it's a story waiting to be told."
+        📊 “Empowering financial decisions through analytics.”
+    </div>
+</section>
+
+<!-- Expertise Strip (NEW) -->
+<section id="expertise">
+    <div class="expertise-grid">
+        <div class="expertise-card">
+            <h3>ERP & Finance Analytics</h3>
+            <p>Cost tracking, budget variance, reporting automation (D365).</p>
+        </div>
+        <div class="expertise-card">
+            <h3>Insurance Analytics</h3>
+            <p>Claims performance, provider analysis, cost distribution insights.</p>
+        </div>
+        <div class="expertise-card">
+            <h3>Business Intelligence</h3>
+            <p>Power BI, DAX, stakeholder dashboards, KPI frameworks.</p>
+        </div>
+        <div class="expertise-card">
+            <h3>Data Engineering</h3>
+            <p>AWS pipelines, ELT/ETL, analytics-ready datasets for reporting.</p>
+        </div>
     </div>
 </section>
 
@@ -482,14 +502,12 @@
 <section id="certifications">
     <h2 class="certifications-title">Professional Certifications</h2>
     <div class="certifications-grid">
-        <!-- AWS Certified Data Engineer -->
         <div class="certification-card">
             <img src="images/aws-certified-data-engineer-associate.png" alt="AWS Certified Data Engineer" class="cert-badge">
             <h3>AWS Certified Data Engineer</h3>
             <p>Validated expertise in designing and building data pipelines on AWS.</p>
         </div>
 
-        <!-- Google Professional Data Analytics -->
         <div class="certification-card">
             <img src="images/google-data-analytics-professional-certificate.2.png" alt="Google Professional Data Analytics" class="cert-badge">
             <h3>Google Professional Data Analytics</h3>
@@ -497,65 +515,67 @@
         </div>
     </div>
 </section>
+
 <!-- Projects Section -->
 <section id="projects" class="projects-section">
-    <h2 class="projects-title">Transforming Data into Decisions</h2>
+    <h2 class="projects-title">Selected Case Studies</h2>
     <div class="filter-container">
-        <button class="filter-button active" data-category="all" onclick="filterProjects('all')">All</button>
-        <button class="filter-button" data-category="BI-Analytics" onclick="filterProjects('BI-Analytics')">BI & Analytics</button>
-        <button class="filter-button" data-category="Data-Engineering" onclick="filterProjects('Data-Engineering')">Data Engineering</button>
-        <button class="filter-button" data-category="Machine-Learning" onclick="filterProjects('Machine-Learning')">Machine Learning</button>
+        <button class="filter-button active" data-category="all">All</button>
+        <button class="filter-button" data-category="BI-Analytics">BI & Analytics</button>
+        <button class="filter-button" data-category="Data-Engineering">Data Engineering</button>
+        <button class="filter-button" data-category="Machine-Learning">Machine Learning</button>
     </div>
-    
+
     <div class="projects-grid">
-        <!-- 📊 Business Intelligence & Analytics -->
-        <div class="project-card" data-category="BI-Analytics" onclick="showSkillsChart('Helpline Dashboard')">
-            <img src="C:\Blue card\portfolio\images\helpline_dashboard.png" alt="Helpline Dashboard">
+        <!-- BI & Analytics -->
+        <div class="project-card" data-category="BI-Analytics">
+            <!-- IMPORTANT: Use relative paths; Windows absolute paths won't work on GitHub Pages -->
+            <img src="images/helpline_dashboard.png" alt="Helpline Dashboard">
             <div class="overlay">
                 <h3>Helpline Dashboard</h3>
-                <p>Call center analytics with interactive Power BI dashboards.</p>
+                <p>Operational KPIs (call volume, response times, resolution) built in Power BI with DAX-driven metrics.</p>
             </div>
         </div>
 
-        <div class="project-card" data-category="BI-Analytics" onclick="showSkillsChart('Claims Performance Analysis')">
+        <div class="project-card" data-category="BI-Analytics">
             <img src="images/claims_performance_dashboard.png" alt="Claims Performance Analysis">
             <div class="overlay">
                 <h3>Claims Performance Analysis</h3>
-                <p>Insurance claims analysis with interactive Power BI insights.</p>
+                <p>Insurance claims analytics to identify cost drivers and provider-level performance using interactive Power BI views.</p>
             </div>
         </div>
 
-        <div class="project-card" data-category="BI-Analytics" onclick="showSkillsChart('Work Location Trends')">
+        <div class="project-card" data-category="BI-Analytics">
             <img src="images/Ashvak_HR_Analytics_Project_Snapshot_page-0001.jpg" alt="Work Location Trends">
             <div class="overlay">
                 <h3>Work Location Trends</h3>
-                <p>Employee location insights for HR analytics using Power BI.</p>
+                <p>HR analytics on remote vs on-site patterns, enabling location-based insights for workforce planning.</p>
             </div>
         </div>
 
-        <!-- 🧠 Machine Learning & AI -->
-        <div class="project-card" data-category="Machine-Learning" onclick="showSkillsChart('Zomato Delivery Prediction')">
-            <img src="C:\Blue card\portfolio\images\zomato_Insights_page-0001.jpg" alt="Zomato Delivery Prediction">
+        <!-- Machine Learning -->
+        <div class="project-card" data-category="Machine-Learning">
+            <img src="images/zomato_Insights_page-0001.jpg" alt="Zomato Delivery Prediction">
             <div class="overlay">
                 <h3>Zomato Delivery Prediction</h3>
-                <p>Predicting delivery times with 98% accuracy using ML models.</p>
+                <p>Delivery-time prediction using feature engineering and ML models, paired with BI dashboards for performance insights.</p>
             </div>
         </div>
 
-        <!-- ⚙️ Data Engineering & Real-Time Pipelines -->
-        <div class="project-card" data-category="Data-Engineering" onclick="showSkillsChart('Just Eat Takeaway Pipeline')">
-            <img src="C:\Blue card\portfolio\images\ETL Pipeline.png" alt="Just Eat Takeaway Pipeline">
+        <!-- Data Engineering -->
+        <div class="project-card" data-category="Data-Engineering">
+            <img src="images/ETL Pipeline.png" alt="Just Eat Takeaway Pipeline">
             <div class="overlay">
                 <h3>Just Eat Takeaway Pipeline</h3>
-                <p>Scalable AWS-based data pipeline for real-time analytics.</p>
+                <p>AWS-based ETL pipeline to ingest, transform, and load data for analytics-ready reporting (S3/Redshift/ETL orchestration).</p>
             </div>
         </div>
 
-        <div class="project-card" data-category="Data-Engineering" onclick="showSkillsChart('AWS Clickstream Pipeline')">
-            <img src="C:\Blue card\portfolio\images\Queried the data using AWS Athena.png" alt="AWS Clickstream Pipeline">
+        <div class="project-card" data-category="Data-Engineering">
+            <img src="images/Queried the data using AWS Athena.png" alt="AWS Clickstream Pipeline">
             <div class="overlay">
                 <h3>AWS Clickstream Data Pipeline</h3>
-                <p>Real-time user insights with AWS Kinesis and Athena.</p>
+                <p>Real-time clickstream ingestion and analysis using AWS services (streaming → data lake → query layer).</p>
             </div>
         </div>
     </div>
@@ -563,7 +583,12 @@
 
 <!-- Footer -->
 <footer>
-    <p>Connect with me: <a href="https://www.linkedin.com/in/ashvak-govindarajula" target="_blank">LinkedIn</a> | <a href="mailto:ashvak@example.com">Email</a></p>
+    <p>
+        Connect with me:
+        <a href="https://www.linkedin.com/in/ash-gov/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        |
+        <a href="mailto:ashvakg@example.com">Email</a>
+    </p>
 </footer>
 
 <script>
@@ -579,27 +604,29 @@
                 buttons.forEach(btn => btn.classList.remove("active"));
                 button.classList.add("active");
 
-                // Animate hiding/showing projects
                 projects.forEach(project => {
-                    if (category === "all" || project.getAttribute("data-category") === category) {
-                        project.style.display = "flex"; // Keep flex for alignment
+                    const match = (category === "all" || project.getAttribute("data-category") === category);
+
+                    if (match) {
+                        project.style.display = "flex";
                         project.style.opacity = "0";
-                        project.style.transform = "scale(0.9)";
+                        project.style.transform = "scale(0.94)";
                         setTimeout(() => {
                             project.style.opacity = "1";
                             project.style.transform = "scale(1)";
-                        }, 200);
+                        }, 180);
                     } else {
                         project.style.opacity = "0";
-                        project.style.transform = "scale(0.9)";
+                        project.style.transform = "scale(0.94)";
                         setTimeout(() => {
                             project.style.display = "none";
-                        }, 200);
+                        }, 180);
                     }
                 });
             });
         });
     });
 </script>
+
 </body>
 </html>
